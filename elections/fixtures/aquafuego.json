@@ -253,7 +253,7 @@
     "pk": 26,
     "model": "elections.loot",
     "fields": {
-        "name": "Amulet of Shielding (15 charges) (+4 AC deflection)",
+        "name": "Amulet of Shielding (15 charges) (+4 AC)",
         "loot_type": "O",
         "bonus": 1,
         "owner": null
