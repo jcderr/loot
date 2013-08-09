@@ -120,6 +120,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'elections',
+    'website',
     'south',
 )
 
