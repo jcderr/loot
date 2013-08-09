@@ -6,7 +6,7 @@ from elections.models import Loot, Player, Election
 
 def election(request):
     if request.method == 'GET':
-        loot = Loot.objects.filter(owner__isnull=True)
+        loot = Loot.objects.filter(owner__isnull=True).order_by('name')
         return render_to_response('election.html',
                                   {'loot': loot},
                                   context_instance=RequestContext(request))

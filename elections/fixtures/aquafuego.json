@@ -168,4 +168,135 @@
 		"bonus": 0,
 		"owner": null
     }
-}]
+},
+{
+    "pk": 18,
+    "model": "elections.loot",
+    "fields": {
+        "name": "+1 Cloak of Resistance",
+        "loot_type": "O",
+        "bonus": 1,
+        "owner": null
+    }
+},
+{
+    "pk": 19,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Gauntlets of the Marsh Ogre (+2 STR)",
+        "loot_type": "O",
+        "bonus": 2,
+        "owner": null
+    }
+},
+{
+    "pk": 20,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Ring of Elemental Resistance DR10/-",
+        "loot_type": "O",
+        "bonus": 2,
+        "owner": null
+    }
+},
+{
+    "pk": 21,
+    "model": "elections.loot",
+    "fields": {
+        "name": "The Ring Currently In T's Possession",
+        "loot_type": "O",
+        "bonus": 5,
+        "owner": null
+    }
+},
+{
+    "pk": 22,
+    "model": "elections.loot",
+    "fields": {
+        "name": "+1 Ring of Protection",
+        "loot_type": "O",
+        "bonus": 1,
+        "owner": null
+    }
+},
+{
+    "pk": 23,
+    "model": "elections.loot",
+    "fields": {
+        "name": "+1 Headband of Resistance",
+        "loot_type": "O",
+        "bonus": 1,
+        "owner": null
+    }
+},
+{
+    "pk": 24,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Ring of Recall",
+        "loot_type": "O",
+        "bonus": 1,
+        "owner": null
+    }
+},
+{
+    "pk": 25,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Wex's Spellbook",
+        "loot_type": "O",
+        "bonus": 5,
+        "owner": null
+    }
+},
+{
+    "pk": 26,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Amulet of Shielding (15 charges) (+4 AC deflection)",
+        "loot_type": "O",
+        "bonus": 1,
+        "owner": null
+    }
+},
+{
+    "pk": 27,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Crosshair's Lenses",
+        "loot_type": "O",
+        "bonus": 4,
+        "owner": null
+    }
+},
+{
+    "pk": 28,
+    "model": "elections.loot",
+    "fields": {
+        "name": "+1 Ring of Protection",
+        "loot_type": "O",
+        "bonus": 1,
+        "owner": null
+    }
+},
+{
+    "pk": 29,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Frog Totem Charm (+1 FORT, +2 v poison)",
+        "loot_type": "O",
+        "bonus": 1,
+        "owner": null
+    }
+},
+{
+    "pk": 30,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Potion of Mirror Image",
+        "loot_type": "O",
+        "bonus": 1,
+        "owner": null
+    }
+}
+]
