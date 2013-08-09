@@ -24,7 +24,8 @@ def election(request):
                 pass
             else:
                 loot_chosen = Loot.objects.get(pk=request.POST[str(i)])
-                if len(Election.objects.filter(player=player, loot=loot_chosen)) > 0:
+                if (len(Election.objects.filter(player=player, loot=loot_chosen)) > 0 or
+                        len(Election.objects.filter(player=player, weight=i)) > 0):
                     pass
                 else:
                     Election(
