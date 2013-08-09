@@ -1,26 +1,48 @@
 {% extends "base.html" %}
 {% block body %}
 
-<h1>Loot from the Aguafuego</h1>
 <form action='' method="POST">
     {% csrf_token %}
-    <ol>
-        <li>First Preference: <select name="1" required>
-            <option value=0 default>---</option>
-            {% for item in loot %}
-            <option value={{item.id}}>{{item}}</option>
-            {% endfor %}</select></li> <textarea cols=140 rows=1 name="comment-1"></textarea>
-        <li>Second Preference: <select name="2">
-            <option value=0 default>---</option>
-            {% for item in loot %}
-            <option value={{item.id}}>{{item}}</option>
-            {% endfor %}</select></li> <textarea cols=140 rows=1 name="comment-2"></textarea>
-        <li>Third Preference: <select name="3">
-            <option value=0 default>---</option>
-            {% for item in loot %}
-            <option value={{item.id}}>{{item}}</option>
-            {% endfor %}</select></li> <textarea cols=140 rows=1 name="comment-3"></textarea>
-        <p><label>Email addr:</label><input required name='email' type="text"></input></p>
-        <p><input type="submit"></p>
+    <fieldset>
+        <legend>Loot from the Aguafuego</legend>
+        <div class="form-group">
+            <label for="1">First Election</label>
+            <select name="1" id="1" class="form-control" required>
+                <option value=0 default>---</option>
+                {% for item in loot %}
+                <option value={{item.id}}>{{item}}</option>
+                {% endfor %}
+            </select>
+            <label for="comment-1">Comment</label>
+            <textarea cols=140 rows=1 id="comment-1" class="form-control" name="comment-1"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="2">Second Election</label>
+            <select name="2" id="2" class="form-control" required>
+                <option value=0 default>---</option>
+                {% for item in loot %}
+                <option value={{item.id}}>{{item}}</option>
+                {% endfor %}
+            </select>
+            <label for="comment-2">Comment</label>
+            <textarea cols=140 rows=1 id="comment-2" class="form-control" name="comment-2"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="3">Third Election</label>
+            <select name="3" id="3" class="form-control" required>
+                <option value=0 default>---</option>
+                {% for item in loot %}
+                <option value={{item.id}}>{{item}}</option>
+                {% endfor %}
+            </select>
+            <label for="comment-3">Comment</label>
+            <textarea cols=140 rows=1 id="comment-3" class="form-control" name="comment-3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input required name="email" type="text" class="form-control" id="email" />
+        </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+    </fieldset>
 </form>
 {% endblock body %}

@@ -1,1 +1,69 @@
-{% block body %}Foo{% endblock body %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Derr's Gaming</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Shattered Lands D&D">
+        <meta name="author" content="Jeremy Derr">
+
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="/static/css/loot.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+    <div class="navbar navbar-static-top">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Derr's Gaming</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="nav-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav pull-right">
+            <li><a href="/admin/">Admin</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+
+    <div class="container">
+    {% block body %}
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Navbar example</h1>
+        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+        <p>
+          <a class="btn btn-large btn-primary" href="../../docs/#navbar">View navbar docs &raquo;</a>
+
+        </p>
+      </div>
+
+    {% endblock body %} 
+    </div> <!-- /container -->
+
+        
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+        <script src="/static/js/respond.js"></script>
+    </body>
+</html>
