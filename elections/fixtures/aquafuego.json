@@ -1,0 +1,171 @@
+[
+{
+    "pk": 1,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Venom Flux, +1 Chaotic Rapier of Wounding",
+        "loot_type": "W",
+		"bonus": 3,
+		"owner": null
+    }
+},
+{
+    "pk": 2,
+    "model": "elections.loot",
+    "fields": {
+        "name": "+1 Cutlass of Cunning (+1 AC dodge, +1 INIT)",
+        "loot_type": "W",
+		"bonus": 3,
+		"owner": null
+    }
+},
+{
+    "pk": 3,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Masterwork Composite Longbow (+3)",
+        "loot_type": "W",
+		"bonus": 0,
+		"owner": null
+    }
+},
+{
+    "pk": 4,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Masterwork Dagger",
+        "loot_type": "W",
+		"bonus": 1,
+		"owner": null
+    }
+},
+{
+    "pk": 5,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Masterwork Dagger",
+        "loot_type": "W",
+		"bonus": 1,
+		"owner": null
+    }
+},
+{
+    "pk": 6,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Masterwork Dagger",
+        "loot_type": "W",
+		"bonus": 1,
+		"owner": null
+    }
+},
+{
+    "pk": 7,
+    "model": "elections.loot",
+    "fields": {
+        "name": "+1 Chain shirt",
+        "loot_type": "A",
+		"bonus": 1,
+		"owner": null
+    }
+},
+{
+    "pk": 8,
+    "model": "elections.loot",
+    "fields": {
+        "name": "+1 Sea leather",
+        "loot_type": "A",
+		"bonus": 1,
+		"owner": null
+    }
+},
+{
+    "pk": 9,
+    "model": "elections.loot",
+    "fields": {
+        "name": "+2 Sea leather",
+        "loot_type": "A",
+		"bonus": 2,
+		"owner": null
+    }
+},
+{
+    "pk": 10,
+    "model": "elections.loot",
+    "fields": {
+        "name": "+2 Sea leather",
+        "loot_type": "A",
+		"bonus": 2,
+		"owner": null
+    }
+},
+{
+    "pk": 11,
+    "model": "elections.loot",
+    "fields": {
+        "name": "+1 Wooden Buckler",
+        "loot_type": "A",
+		"bonus": 1,
+		"owner": null
+    }
+},
+{
+    "pk": 12,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Captain's Spellbook",
+        "loot_type": "O",
+		"bonus": 0,
+		"owner": null
+    }
+},
+{
+    "pk": 13,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Scroll (Rage)",
+        "loot_type": "O",
+		"bonus": 0,
+		"owner": null
+    }
+},
+{
+    "pk": 14,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Scroll (Pyrotechnics)",
+        "loot_type": "O",
+		"bonus": 0,
+		"owner": null
+    }
+},
+{
+    "pk": 15,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Wand of Sleep (14 charges)",
+        "loot_type": "O",
+		"bonus": 0,
+		"owner": null
+    }
+},
+{
+    "pk": 16,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Potion (Heroism/5th Level)",
+        "loot_type": "O",
+		"bonus": 0,
+		"owner": null
+    }
+},
+{
+    "pk": 17,
+    "model": "elections.loot",
+    "fields": {
+        "name": "Potion (Rust Touch)",
+        "loot_type": "O",
+		"bonus": 0,
+		"owner": null
+    }
+}]
