@@ -113,7 +113,7 @@
     "pk": 12,
     "model": "elections.loot",
     "fields": {
-        "name": "Captain's Spellbook",
+        "name": "Spellbook, Sorana's",
         "loot_type": "O",
 		"bonus": 0,
 		"owner": null
@@ -243,7 +243,7 @@
     "pk": 25,
     "model": "elections.loot",
     "fields": {
-        "name": "Wex's Spellbook",
+        "name": "Spellbook, Wex's",
         "loot_type": "O",
         "bonus": 5,
         "owner": null
