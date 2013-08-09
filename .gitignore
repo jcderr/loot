@@ -1,0 +1,14 @@
+*.pyc
+*.pyo
+*~
+*.swp
+*.bk
+*.bak
+venv
+build
+src
+.idea
+dist
+*.egg-info
+*.env
+.ropeproject
