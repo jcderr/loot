@@ -8,19 +8,23 @@ LOOT_TYPES = [
     ['O', 'Other'],
 ]
 
+class Player(models.Model):
+    name = models.CharField(max_length=45)
+    character = models.CharField(max_length=45)
+    email = models.EmailField()
 
 class Loot(models.Model):
     name = models.CharField(max_length=45)
     loot_type = models.CharField(max_length=5, choices=LOOT_TYPES)
     bonus = models.IntegerField()
-    owner = models.CharField(max_length=40)
+    owner = models.ForeignKey(Player, null=True, blank=True)
 
     def __unicode__(self):
         return self.name
 
 
 class Election(models.Model):
-    user = models.EmailField()
+    player = models.ForeignKey(Player, null=True, blank=True)
     weight = models.IntegerField()
     loot = models.ForeignKey(Loot)
     awarded = models.BooleanField(default=False)

@@ -6,7 +6,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'loot.views.home', name='home'),
     # url(r'^loot/', include('loot.foo.urls')),
-
+    url(r'^elections/', include('elections.urls')),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
