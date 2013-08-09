@@ -8,10 +8,15 @@ LOOT_TYPES = [
     ['O', 'Other'],
 ]
 
+
 class Player(models.Model):
     name = models.CharField(max_length=45)
     character = models.CharField(max_length=45)
     email = models.EmailField()
+
+    def __unicode__(self):
+        return self.name
+
 
 class Loot(models.Model):
     name = models.CharField(max_length=45)
@@ -33,6 +38,6 @@ class Election(models.Model):
     def __unicode__(self):
         if not self.awarded:
             return '{} request: {} ({})'.format(
-                self.user, self.loot.name, self.weight)
+                self.player, self.loot.name, self.weight)
         else:
-            return '{} received {}'.format(self.user, self.loot.name)
+            return '{} received {}'.format(self.player, self.loot.name)
