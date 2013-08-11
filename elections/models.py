@@ -18,11 +18,22 @@ class Player(models.Model):
         return self.name
 
 
+class Hoard(models.Model):
+    name = models.CharField(max_length=25)
+    finalized = models.BooleanField(default=False)
+    picks = models.IntegerField()
+
+    def __unicode__(self):
+        return 'Loot of {}'.format(self.name)
+
+
 class Loot(models.Model):
     name = models.CharField(max_length=45)
     loot_type = models.CharField(max_length=5, choices=LOOT_TYPES)
     bonus = models.IntegerField()
     owner = models.ForeignKey(Player, null=True, blank=True)
+    conflict = models.BooleanField(default=False)
+    hoard = models.ForeignKey(Hoard, blank=True, null=True)
 
     def __unicode__(self):
         return self.name

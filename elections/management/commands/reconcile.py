@@ -11,13 +11,27 @@ class Command(BaseCommand):
                     default=False,
                     dest="commit",
                     help='Commit ownership into the database'),
+        make_option('--revert',
+                    action="store_true",
+                    default=False,
+                    dest="revert",
+                    help='Revert all ownership'),
     )
 
-    def handle(self, commit, *args, **options):
+    def handle(self, commit, revert, *args, **options):
+        if revert:
+            for l in Loot.objects.all():
+                l.owner = None
+                l.save()
+            for e in Election.objects.all():
+                e.awarded = False
+                e.save()
+            return
+
         conflicts = []
         try:
             for i in Loot.objects.all():
-                if i.owner:
+                if i.owner or i.conflict:
                     pass
                 else:
                     for x in range(1, 4):
@@ -27,17 +41,31 @@ class Command(BaseCommand):
                                 i.owner = winner[0]
                                 if commit:
                                     i.save()
-                        elif winner and len(winner) > 1:
+                                    e = Election.objects.get(loot=i, player=i.owner)
+                                    e.awarded = True
+                                    e.save()
+                                else:
+                                    self.stdout.write('{} to {}'.format(i, winner))
+                        elif not winner is None and len(winner) > 1:
+                            print 'conflict for {}'.format(i)
                             if not i.owner:
-                                conflicts.append([i, winner])
+                                if commit:
+                                    i.conflict = True
+                                    i.save()
+                            conflicts.append([i, winner])
         except Exception, e:
             raise CommandError(e)
 
-        self.stdout.write('==== AWARDS ====\n')
-        for p in Player.objects.all():
-            self.stdout.write('Items for {}'.format(p.name))
-            for i in Loot.objects.filter(owner=p):
-                self.stdout.write('    {}'.format(i))
+        if commit:
+            self.stdout.write('==== AWARDS ====\n')
+            for p in Player.objects.all():
+                self.stdout.write('Items for {}'.format(p.name))
+                for i in Loot.objects.filter(owner=p):
+                    self.stdout.write('    {}'.format(i))
+
+        self.stdout.write('\n\n==== LOSERS ====\n')
+        for e in Election.objects.filter(awarded=False):
+            self.stdout.write('{}'.format(e))
 
         self.stdout.write('\n\n==== CONFLICTS ====\n')
         for c in conflicts:
