@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="navbar">
+    <a class="navbar-brand" href="#">{{hoard}}</a>
+  <ul class="nav navbar-nav">
+      <li class="active"><a href="#" id="claimed-btn" onClick="showClaimed()">Claimed</a></li>
+      <li><a href="#" id="unclaimed-btn" onClick="showUnclaimed()">Unclaimed</a></li>
+  </ul>
+</div>
+
+<table class="table" id="claimed">
+    <thead>
+        <tr><th>Item</th><th>Owner</th></tr>
+    </thead>
+    <tbody>
+        {% for it in loot %}
+        {% if it.owner %}
+        <tr><td>{{it.name}}</td><td>{{it.owner}}</td></tr>
+        {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+
+<table class="table" id="unclaimed" onLoad="showClaimed()">
+    <caption>{{hoard}}</caption>
+    <thead>
+        <tr><th>Item</th><th>Owner</th></tr>
+    </thead>
+    <tbody>
+        {% for it in loot %}
+        {% if not it.owner %}
+        <tr><td>{{it.name}}</td><td>{{it.owner}}</td></tr>
+        {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+
+<script type="text/javascript">
+document.getElementById('unclaimed').style.display = "none";
+
+function showUnclaimed(){
+    document.getElementById('unclaimed').style.display = "table";
+    document.getElementById('claimed').style.display = "none";
+}
+
+function showClaimed(){
+    document.getElementById('unclaimed').style.display = "none";
+    document.getElementById('claimed').style.display = "table";
+}
+</script>
+{% endblock body %}
