@@ -121,6 +121,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'elections',
     'website',
+    'blog',
     'south',
 )
 

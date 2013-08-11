@@ -4,8 +4,8 @@
 <div class="navbar">
     <a class="navbar-brand" href="#">{{hoard}}</a>
   <ul class="nav navbar-nav">
-      <li class="active"><a href="#" id="claimed-btn" onClick="showClaimed()">Claimed</a></li>
-      <li><a href="#" id="unclaimed-btn" onClick="showUnclaimed()">Unclaimed</a></li>
+      <li id="claimed-btn" class="active"><a href="#" onClick="showClaimed()">Claimed</a></li>
+      <li id="unclaimed-btn"><a href="#" onClick="showUnclaimed()">Unclaimed</a></li>
   </ul>
 </div>
 
@@ -23,7 +23,6 @@
 </table>
 
 <table class="table" id="unclaimed" onLoad="showClaimed()">
-    <caption>{{hoard}}</caption>
     <thead>
         <tr><th>Item</th><th>Owner</th></tr>
     </thead>
@@ -42,11 +41,18 @@ document.getElementById('unclaimed').style.display = "none";
 function showUnclaimed(){
     document.getElementById('unclaimed').style.display = "table";
     document.getElementById('claimed').style.display = "none";
+
+    document.getElementById('unclaimed-btn').setAttribute('class', 'active');
+    document.getElementById('claimed-btn').setAttribute('class', '');
 }
 
 function showClaimed(){
     document.getElementById('unclaimed').style.display = "none";
     document.getElementById('claimed').style.display = "table";
+
+    document.getElementById('claimed-btn').setAttribute('class', 'active');
+    document.getElementById('unclaimed-btn').setAttribute('class', '');
+
 }
 </script>
 {% endblock body %}

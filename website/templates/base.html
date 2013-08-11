@@ -27,11 +27,11 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li>Hoards</li>
-                <li><a href="/loot/aguafuego/">Loot of the Aguafuego</a></li>
+                <li class="nav-header">Blogs</li>
+                <li><a href="/blog/altmeer/">Altmeer</a></li>
                 <li class="divider"></li>
-                <li class="nav-header">Nav header</li>
-                <li><a href="#">Nothing</a></li>
+                <li class="nav-header">Hoards</li>
+                <li><a href="/loot/aguafuego/">Loot of the Aguafuego</a></li>
               </ul>
             </li>
           </ul>
@@ -46,17 +46,16 @@
 
     <div class="container">
     {% block body %}
-      <!-- Main component for a primary marketing message or call to action -->
+      {%  for c in content %}
       <div class="jumbotron">
-        <h1>Aguafuego Captured!</h1>
-        <p>The Loot of the Aguafuego has been distributed.</p>
+        <h1>{{ c.title }}</h1>
+        <p>{{ c.teaser }}</p>
         <p>
-          <a class="btn btn-large btn-primary" href="/loot/aguafuego/">Click here &raquo;</a>
-
+          <a class="btn btn-large btn-primary" href="{{ c.permalink }}">Click here &raquo;</a>
         </p>
       </div>
-
-    {% endblock body %} 
+      {%  endfor %}
+    {% endblock body %}
     </div> <!-- /container -->
 
         
