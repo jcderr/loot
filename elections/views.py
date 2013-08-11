@@ -1,7 +1,16 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 
-from elections.models import Loot, Player, Election
+from elections.models import Loot, Player, Election, Hoard
+
+
+def results(request, hoard):
+    hoard = hoard.replace(' ', '')
+    _hoard = get_object_or_404(Hoard, name__icontains=hoard)
+    _loot = Loot.objects.filter(hoard=_hoard).order_by('owner')
+    return render_to_response('hoard_results.html',
+                              {'loot': _loot, 'hoard': _hoard},
+                              context_instance=RequestContext(request))
 
 
 def election(request):
@@ -24,8 +33,12 @@ def election(request):
                 pass
             else:
                 loot_chosen = Loot.objects.get(pk=request.POST[str(i)])
-                if (len(Election.objects.filter(player=player, loot=loot_chosen)) > 0 or
-                        len(Election.objects.filter(player=player, weight=i)) > 0):
+                if (len(Election.objects.filter(
+                        player=player,
+                        loot=loot_chosen)) > 0 or
+                    len(Election.objects.filter(
+                        player=player,
+                        weight=i)) > 0):
                     pass
                 else:
                     Election(
