@@ -17,7 +17,7 @@ def listview(request, character):
     _player = get_object_or_404(Player, character__iexact=character)
     _character = _player.character
     _posts = CampaignJournal.objects.filter(
-        character__character=character).order_by('-date')
+        character__character=_character).order_by('-date')
     return render_to_response('listview.html',
         {'posts': _posts,
          'character': _character, },
