@@ -21,6 +21,10 @@ class Content(models.Model):
 class CampaignJournal(Content):
     character = models.ForeignKey(Player)
 
+    def __unicode__(self):
+        return '{} writes: {}'.format(
+            self.character.character, self.title)
+    
 
 class BlogPost(Content):
     pass
