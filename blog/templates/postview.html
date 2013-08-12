@@ -1,20 +1,5 @@
 {% extends "base.html" %}
 
 {% block body %}
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="row">
-                <div class="col-lg-1">&nbsp;</div>
-                <div class="col-lg-11">
-                    <h3>{{ post.title }}</h3><br />
-                    &nbsp;{{ post.character.character }} writes...
-                </div>
-            </div>
-            <p></p>
-            <div class="row">
-                <div class="col-lg-2">&nbsp;</div>
-                <div class="col-lg-10">{{ post.content|linebreaks }}</div>
-            </div>
-        </div>
-    </div>
+    {%  include "single_post.html" %}
 {% endblock %}
