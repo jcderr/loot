@@ -5,8 +5,13 @@ from elections.models import Player
 from blog.models import CampaignJournal
 
 
-def post(request):
-    pass
+def post(request, character, year, month, slug):
+    _title = slug.replace('-', ' ')
+    _post = get_object_or_404(CampaignJournal,
+        title__iexact=_title)
+    return render_to_response('postview.html',
+        {'post': _post},
+        context_instance=RequestContext(request))
 
 def listview(request, character):
     _player = get_object_or_404(Player, character__iexact=character)
